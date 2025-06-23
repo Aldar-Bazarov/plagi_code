@@ -1,7 +1,7 @@
 [project]
-name = "fast-api"
+name = "plagi_code"
 version = "0.1.0"
-description = "test desc"
+description = "project about plagi_code"
 authors = [
     {name = "Aldar",email = "a.bazarov.sas@gmail.com"}
 ]
