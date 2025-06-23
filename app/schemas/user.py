@@ -21,5 +21,5 @@ class UserInDB(UserBase):
         from_attributes = True
 
 class UserLogin(BaseModel):
-    email: EmailStr
-    password: str = Field(..., min_length=6, max_length=50)
+    username: str
+    password: str

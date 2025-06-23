@@ -1,5 +1,6 @@
 import os
 from contextlib import asynccontextmanager
+import logging
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,6 +10,12 @@ from app.api.v1.router import router as api_router
 from app.core.config import settings
 from app.models.user import User
 from app.core.security import get_password_hash
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+)
+logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -47,3 +54,8 @@ app.include_router(api_router)
 @app.get("/")
 def read_root():
     return {"message": "Welcome to FastAPI Auth Project"}
+
+if __name__ == "__main__":
+    logger.info("Запуск FastAPI приложения...")
+    import uvicorn
+    uvicorn.run("app.main:app", host="0.0.0.0", port=8000, reload=True)
