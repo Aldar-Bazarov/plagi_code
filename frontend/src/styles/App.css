@@ -1,0 +1,82 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f8f9fa; /* Светлый фон */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Растягиваем на всю высоту */
+  justify-content: center; /* Центрируем содержимое */
+}
+
+.app-content {
+  width: 50vw;
+  height: 50vh; /* 50% высоты окна */
+  margin: auto;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.check-button {
+  margin-top: 3vh;
+  background-color: #424548;
+  color: white;
+  font-size: 1.5rem; /* Увеличиваем размер */
+  font-weight: bold;
+  padding: 15px 30px; /* Увеличиваем отступы */
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.check-button:hover {
+  background-color: #121314; /* Цвет при наведении */
+}
+
+.app-title {
+  font-size: 4rem; /* Размер заголовка */
+  font-weight: 700;
+  color: #343a40; /* Тёмный текст */
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.app-description {
+  font-size: 2rem;
+  color: #6c757d; /* Серый текст */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.upload-form {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.file-label {
+  font-size: 2rem;
+  align-items: center;
+  color: #495057;
+  margin-left: 20px;
+}
+
+.file-input {
+  margin-top: 20px;
+  font-size: 1.7rem;
+}

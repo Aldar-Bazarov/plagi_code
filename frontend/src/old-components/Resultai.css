@@ -1,0 +1,346 @@
+.app-content-resultai {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.result-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.result-filename {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.result-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-stats {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.probability, .verdict {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.stat-label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.high-probability {
+  color: #d32f2f;
+}
+
+.low-probability {
+  color: #2e7d32;
+}
+
+.negative-verdict {
+  color: #d32f2f;
+}
+
+.positive-verdict {
+  color: #2e7d32;
+}
+
+.code-container {
+  margin-top: 1rem;
+}
+
+.code-header {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.code-block {
+  background-color: #f1f3f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #333;
+  border: 1px solid #dee2e6;
+}
+
+/* Стили для сравнения файлов */
+.comparison-result {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+}
+
+.file-comparison {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.similarity-indicator {
+  background-color: #e3f2fd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.similarity-value {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Стили для состояния загрузки */
+.loading-container {
+  width: 60vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: #616161;
+}
+
+/* Стили для отсутствия результатов */
+.no-results-container {
+  width: 60vw;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.no-results-container p {
+  font-size: 1.2rem;
+  color: #616161;
+  margin: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .app-content-resultai {
+    width: 95vw;
+    padding: 15px;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .loading-container,
+  .no-results-container {
+    width: 90vw;
+  }
+}
+
+/* Стили для матрицы сходства */
+.similarity-matrix-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.matrix-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.similarity-matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.similarity-matrix th, .similarity-matrix td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.similarity-matrix th.filename-header {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+  background-color: #f0f0f0;
+}
+
+.similarity-matrix td {
+  font-weight: bold;
+}
+
+.similarity-self {
+  background-color: #e0e0e0;
+  color: #666;
+}
+
+.similarity-high {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.similarity-medium {
+  background-color: #ffd166;
+  color: #333;
+}
+
+.similarity-low {
+  background-color: #06d6a0;
+  color: white;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
+/* Стили для страницы детального сравнения */
+.comparison-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.similarity-badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+.comparison-indicators {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.similarity-arrow {
+  font-size: 24px;
+  color: #888;
+  margin: 10px 0;
+}
+
+.similarity-meter {
+  width: 20px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.medium-probability {
+  color: #ec9706;
+}
+
+/* Дополнительные классы для мобильной адаптации */
+@media (max-width: 768px) {
+  .similarity-matrix th, .similarity-matrix td {
+    padding: 4px;
+    font-size: 12px;
+  }
+  
+  .similarity-matrix-container {
+    padding: 10px;
+  }
+  
+  .legend-item {
+    margin: 5px;
+    font-size: 12px;
+  }
+}
+
+/* Стили для файловых контейнеров */
+.file-result-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.file-summary {
+  margin-bottom: 1.5rem;
+}
+
+.file-summary-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.high-risk {
+  background-color: #ffebee;
+  color: #d32f2f;
+  border: 1px solid #ffcdd2;
+}
+
+.low-risk {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+/* Стили для карточек фрагментов кода */
+.code-result-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}

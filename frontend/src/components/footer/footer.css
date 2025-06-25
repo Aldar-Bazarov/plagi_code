@@ -1,0 +1,20 @@
+.footer {
+    position: fixed; /* Закрепляем футер */
+    bottom: 0; /* Прижимаем к низу окна */
+    left: 0; /* Растягиваем по всей ширине */
+    width: 100%; /* Ширина 100% экрана */
+    height: 7.5vh; /* Высота футера */
+    background-color: #343a40; /* Тёмный фон */
+    display: flex; /* Flexbox для центрирования текста */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+    color: white; /* Белый текст */
+    font-family: 'Montserrat', sans-serif; /* Шрифт Montserrat */
+    font-size: 1.5rem; /* Размер текста */
+  }
+  
+  .footer-text {
+    margin: 0; /* Убираем отступы */
+    text-align: center; /* Выравниваем текст */
+  }
+  
